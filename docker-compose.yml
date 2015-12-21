@@ -1,0 +1,7 @@
+p4git:
+  build: p4git
+  links:
+   - p4server
+p4server:
+  build: p4server 
+  hostname: p4server
