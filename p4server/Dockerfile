@@ -15,7 +15,7 @@ RUN echo $(grep $(hostname) /etc/hosts | cut -f1) p4server >> /etc/hosts && \
     p4 -u perforce protect -o && \
     p4 passwd -P $P4ROOTPW $P4USER 
 
- RUN echo 'p4server' > /etc/hostname && \
+RUN echo $(grep $(hostname) /etc/hosts | cut -f1) p4server >> /etc/hosts && \
     yum install -y helix-git-fusion-trigger && \
     p4d -d 
 #    /opt/perforce/git-fusion/libexec/p4gf_submit_trigger.py --install  $P4PORT $P4USER $P4ROOTPW
